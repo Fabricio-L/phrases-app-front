@@ -1,10 +1,10 @@
-import { ToggleSwitch } from './components/atoms'
+import { NavBar } from './components/molecules'
 import styles from './App.module.css'
 
 function App() {
   return (
     <main className={styles.main}>
-      <ToggleSwitch />
+      <NavBar />
     </main>
   )
 }
