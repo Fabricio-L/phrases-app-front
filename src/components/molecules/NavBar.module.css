@@ -1,0 +1,15 @@
+nav {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background-color: var(--color-bg-secondary);
+  color: var(--color-text);
+  padding: var(--padding-y) var(--padding-x);
+  gap: var(--space);
+}
+
+.title {
+  flex-grow: 1;
+  font-size: var(--font-size-lg);
+  font-weight: 500;
+}
