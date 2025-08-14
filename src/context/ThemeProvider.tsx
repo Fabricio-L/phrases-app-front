@@ -6,10 +6,11 @@ import type { Theme } from '../utils/globals'
 export const ThemeProvider = ({ children }: { children: ReactNode }) => {
   localStorage.setItem(
     'theme',
-    window.matchMedia('(prefers-color-scheme: dark)').matches ? THEME.DARK : THEME.LIGHT
+    window.matchMedia('(prefers-color-scheme: dark)').matches
+      ? THEME.DARK
+      : THEME.LIGHT
   )
-  const preference: Theme | null =
-    localStorage.getItem('theme') as Theme
+  const preference: Theme | null = localStorage.getItem('theme') as Theme
 
   const [theme, setTheme] = useState<Theme>(preference ?? THEME.LIGHT)
 
