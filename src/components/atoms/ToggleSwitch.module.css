@@ -1,0 +1,18 @@
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  background: var(--color-bg-secondary);
+  color: var(--color-text);
+  border: solid var(--border-width) var(--color-border);
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  transition:
+    background 0.3s ease,
+    color 0.3s ease;
+}
+
+.button:hover {
+  opacity: 0.9;
+}
