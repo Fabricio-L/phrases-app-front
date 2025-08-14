@@ -1,29 +1,29 @@
 import { useState, type ReactNode } from 'react'
 import { ThemeContext } from './ThemeContext'
-
-type Theme = 'light' | 'dark'
+import { THEME } from '../utils/constants'
+import type { Theme } from '../utils/globals'
 
 export const ThemeProvider = ({ children }: { children: ReactNode }) => {
   localStorage.setItem(
     'theme',
-    window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
+    window.matchMedia('(prefers-color-scheme: dark)').matches ? THEME.DARK : THEME.LIGHT
   )
   const preference: Theme | null =
-    localStorage.getItem('theme') === 'dark' ? 'dark' : 'light'
+    localStorage.getItem('theme') as Theme
 
-  const [theme, setTheme] = useState<Theme>(preference ? preference : 'light')
+  const [theme, setTheme] = useState<Theme>(preference ?? THEME.LIGHT)
 
-  if (theme === 'light') {
-    document.body.setAttribute('data-theme', 'light')
+  if (theme === THEME.LIGHT) {
+    document.body.setAttribute('data-theme', THEME.LIGHT)
   } else {
-    document.body.setAttribute('data-theme', 'dark')
+    document.body.setAttribute('data-theme', THEME.DARK)
   }
 
   const toggleTheme = () => {
-    const newTheme = theme === 'light' ? 'dark' : 'light'
-    setTheme(newTheme)
-    document.body.setAttribute('data-theme', newTheme)
-    localStorage.setItem('theme', newTheme)
+    setTheme(theme === THEME.LIGHT ? THEME.DARK : THEME.LIGHT)
+
+    document.body.setAttribute('data-theme', theme)
+    localStorage.setItem('theme', theme)
   }
 
   return (
