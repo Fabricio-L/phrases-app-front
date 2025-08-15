@@ -1,0 +1,24 @@
+.card {
+  display:inline-block;
+  background-color: var(--color-bg-secondary);
+  border-top: solid var(--border-width) var(--color-border);
+  border-radius: var(--border-radius);
+  padding: var(--padding-size);
+  color: var(--color-text);
+  margin-bottom: 2rem;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.phrase {
+  font-size: var(--font-size-sm);
+  font-style: italic;
+  font-weight: 300;
+}
+
+.author {
+  color: var(--color-text-secondary);
+  font-size: var(--font-size-md);
+  font-weight: 600;
+  text-align: end;
+}

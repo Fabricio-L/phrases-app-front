@@ -6,7 +6,7 @@
   --color-bg-secondary: #f2f2f2;
   --color-text: #1a1a1a;
   --color-text-secondary: #555555;
-  --color-border: #cfcfcf;
+  --color-border: #c78aff;
   --color-accent: #e4d6f1;
 }
 
@@ -22,41 +22,49 @@
   --color-accent: #2f1b47;
 }
 
-:root, [data-theme='dark'] {
+:root,
+[data-theme='dark'] {
   --border-radius: 8px;
   --border-width: 2px;
-  --padding-size: min(0.5rem, 8%);
+  --padding-size: min(0.7rem, 8%);
   --padding-x: 1rem;
   --padding-y: 0.5rem;
   --space: 0.5rem;
-  --font-size-lg: clamp(0.5rem, calc(3vw + 0.2rem), 2rem);
-  --font-size-md: clamp(0.3rem, 1vw, 1.5rem);
-  --font-size-sm: clamp(0.2rem, 0.5vw, 1rem);
+  --font-size-lg: clamp(1rem, calc(3vw + 0.6rem), 2rem);
+  --font-size-md: clamp(1.2rem, 1vw, 1.5rem);
+  --font-size-sm: clamp(1rem, 0.8vw, 1.2rem);
+  --column-count: 1;
+  --margin-top: 5rem;
 }
-
 
 /* Tablet (>= 768px) */
 @media (min-width: 768px) {
-  :root, [data-theme='dark'] {
+  :root,
+  [data-theme='dark'] {
     --padding-x: 1.5rem;
     --padding-y: 0.5rem;
     --space: 1rem;
+    --column-count: 2;
+    --margin-top: 7rem;
   }
 }
 
 /* Desktop (>= 1024px) */
 @media (min-width: 1024px) {
-  :root, [data-theme='dark'] {
+  :root,
+  [data-theme='dark'] {
     --padding-x: 2rem;
     --padding-y: 0.5rem;
     --space: 1rem;
+    --column-count: 3;
+    --margin-top: 8rem;
   }
 }
-
 
 body {
   background-color: var(--color-bg);
   color: var(--color-text);
-  margin: 0;
-  font-family: "Quicksand", sans-serif;
+  font-family: 'Quicksand', sans-serif;
+  width: min(1000px, 100vw);
+  margin: 0 auto;
 }

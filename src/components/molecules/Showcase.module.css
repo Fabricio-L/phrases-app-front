@@ -1,0 +1,6 @@
+.showcase {
+  column-count: var(--column-count);
+  column-width: 280px;
+  column-gap: 2rem;
+  padding: 2rem;
+}
