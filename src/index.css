@@ -34,6 +34,7 @@
   --font-size-md: clamp(1.2rem, 1vw, 1.5rem);
   --font-size-sm: clamp(1rem, 0.8vw, 1.2rem);
   --column-count: 1;
+  --margin-top: 5rem;
 }
 
 /* Tablet (>= 768px) */
@@ -44,6 +45,7 @@
     --padding-y: 0.5rem;
     --space: 1rem;
     --column-count: 2;
+    --margin-top: 7rem;
   }
 }
 
@@ -55,6 +57,7 @@
     --padding-y: 0.5rem;
     --space: 1rem;
     --column-count: 3;
+    --margin-top: 8rem;
   }
 }
 
