@@ -1,15 +1,32 @@
-nav {
+.header {
   display: flex;
-  flex-direction: row;
   align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 0;
   background-color: var(--color-bg-secondary);
+}
+
+.nav {
+  display: flex;
+  width: min(1200px, 90%);
+  margin: auto;
   color: var(--color-text);
-  padding: var(--padding-y) var(--padding-x);
   gap: var(--space);
+  align-items: center;
 }
 
 .title {
-  flex-grow: 1;
   font-size: var(--font-size-lg);
   font-weight: 500;
+  flex-grow: 1;
+}
+
+.actions {
+  display: flex;
+  flex-direction: row;
+  gap: var(--space);
+  margin-right: var(--space);
 }
