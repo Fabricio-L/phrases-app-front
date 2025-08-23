@@ -6,8 +6,14 @@
   --color-bg-secondary: #f2f2f2;
   --color-text: #1a1a1a;
   --color-text-secondary: #555555;
-  --color-border: #c78aff;
+  --color-border: #935fc3;
   --color-accent: #e4d6f1;
+  --color-info: #195eb7;
+  --color-success: #2e7d32;
+  --color-error: #b02424;
+  --color-bg-info: #7eb5fe;
+  --color-bg-success: #7fd083;
+  --color-bg-error: #d37777;
 }
 
 [data-theme='dark'] {
@@ -20,13 +26,19 @@
   --color-text-secondary: #b3b3b3;
   --color-border: #693b93;
   --color-accent: #2f1b47;
+  --color-info: #195eb7;
+  --color-success: #2e7d32;
+  --color-error: #b02424;
+  --color-bg-info: #7eb5fe;
+  --color-bg-success: #7fd083;
+  --color-bg-error: #d37777;
 }
 
 :root,
 [data-theme='dark'] {
   --border-radius: 8px;
   --border-width: 2px;
-  --padding-size: min(0.7rem, 8%);
+  --padding-size: min(0.5rem, 8%);
   --padding-x: 1rem;
   --padding-y: 0.5rem;
   --space: 0.5rem;
@@ -41,6 +53,7 @@
 @media (min-width: 768px) {
   :root,
   [data-theme='dark'] {
+    --padding-size: min(0.5rem, 8%);
     --padding-x: 1.5rem;
     --padding-y: 0.5rem;
     --space: 1rem;
@@ -53,6 +66,7 @@
 @media (min-width: 1024px) {
   :root,
   [data-theme='dark'] {
+    --padding-size: min(0.7rem, 8%);
     --padding-x: 2rem;
     --padding-y: 0.5rem;
     --space: 1rem;

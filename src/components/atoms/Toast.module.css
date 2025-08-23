@@ -1,0 +1,26 @@
+.info {
+  color: var(--color-info);
+  font-weight: 600;
+  background-color: var(--color-bg-info);
+  padding: var(--padding-size);
+  border-radius: var(--border-radius);
+  width: 100%;
+}
+
+.success {
+  color: var(--color-success);
+  font-weight: 600;
+  background-color: var(--color-bg-success);
+  padding: var(--padding-size);
+  border-radius: var(--border-radius);
+  width: 100%;
+}
+
+.error {
+  color: var(--color-error);
+  font-weight: 600;
+  background-color: var(--color-bg-error);
+  padding: var(--padding-size);
+  border-radius: var(--border-radius);
+  width: 100%;
+}
