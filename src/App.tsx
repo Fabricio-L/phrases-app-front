@@ -1,13 +1,30 @@
-import { NavBar, Modal } from './components/molecules'
-import styles from './App.module.css'
-import Showcase from './components/molecules/Showcase'
+import { NavBar, Modal, Showcase } from './components/molecules'
 import { Button } from './components/atoms'
 import { IconPlus } from '@tabler/icons-react'
+
 import useModalManager from './hooks/useModalManager'
 import PhrasesForm from './components/forms/PhrasesForm'
 
+import styles from './App.module.css'
+import { useEffect } from 'react'
+import { useToast } from './hooks/useToast'
+
+import type { ItemsState } from './utils/globals'
+import { fetchAll } from './redux/slices/phrases/phraseSlice'
+import { useAppDispatch, useAppSelector } from './redux/hook'
+
 function App() {
+  const dispatch = useAppDispatch()
+  const items = useAppSelector((state: ItemsState) => state.phrases)
+
   const { isOpen, open, close } = useModalManager()
+  const { addToast } = useToast()
+
+  useEffect(() => {
+    dispatch(fetchAll())
+
+    if (items.error) addToast(items.error, 'error')
+  }, [dispatch, items.error, addToast])
 
   return (
     <>
@@ -21,7 +38,7 @@ function App() {
             icon={<IconPlus />}
           />
         </div>
-        <Showcase />
+        <Showcase data={items.list} />
       </main>
       <Modal
         title="Nueva Frase"

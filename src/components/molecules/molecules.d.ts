@@ -4,3 +4,7 @@ export interface ModalProps {
   onClose: () => void
   children: React.ReactNode
 }
+
+export interface ShowcaseProps {
+  data: Phrase[]
+}
