@@ -12,6 +12,7 @@ import { useToast } from './hooks/useToast'
 import type { ItemsState } from './utils/globals'
 import { fetchAll } from './redux/slices/phrases/phraseSlice'
 import { useAppDispatch, useAppSelector } from './redux/hook'
+import Spinner from './components/atoms/Spinner'
 
 function App() {
   const dispatch = useAppDispatch()
@@ -38,7 +39,7 @@ function App() {
             icon={<IconPlus />}
           />
         </div>
-        <Showcase data={items.list} />
+        {items.loading ? <Spinner /> : <Showcase data={items.list} />}
       </main>
       <Modal
         title="Nueva Frase"
