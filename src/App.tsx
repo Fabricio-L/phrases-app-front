@@ -1,5 +1,5 @@
 import { NavBar, Modal, Showcase } from './components/molecules'
-import { Button } from './components/atoms'
+import { Button, Spinner } from './components/atoms'
 import { IconPlus } from '@tabler/icons-react'
 
 import useModalManager from './hooks/useModalManager'
@@ -12,7 +12,6 @@ import { useToast } from './hooks/useToast'
 import type { ItemsState } from './utils/globals'
 import { fetchAll } from './redux/slices/phrases/phraseSlice'
 import { useAppDispatch, useAppSelector } from './redux/hook'
-import Spinner from './components/atoms/Spinner'
 
 function App() {
   const dispatch = useAppDispatch()
@@ -25,7 +24,7 @@ function App() {
     dispatch(fetchAll())
 
     if (items.error) addToast(items.error, 'error')
-  }, [dispatch, items.error, addToast])
+  }, [dispatch, items.error, addToast, isOpen])
 
   return (
     <>
@@ -46,7 +45,7 @@ function App() {
         isOpen={isOpen('modal')}
         onClose={() => close('modal')}
       >
-        <PhrasesForm />
+        <PhrasesForm onClose={() => close('modal')} edit={false} />
       </Modal>
     </>
   )

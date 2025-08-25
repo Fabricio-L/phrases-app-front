@@ -11,11 +11,6 @@ export interface IconButtonProps {
   ariaLabel?: string
 }
 
-export interface CardProps {
-  phrase: string
-  author?: string
-}
-
 export interface ToastProps {
   message: string
   type: 'info' | 'success' | 'error'

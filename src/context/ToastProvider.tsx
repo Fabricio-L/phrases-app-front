@@ -1,7 +1,7 @@
 import React, { useState, useCallback } from 'react'
 import type { ToastProps, ToastType } from './ToastContext'
 import { ToastContext } from './ToastContext'
-import Toast from '../components/atoms/Toast'
+import { Toast } from '../components/atoms'
 
 let toastId = 0
 
