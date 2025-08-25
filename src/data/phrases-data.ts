@@ -8,33 +8,28 @@ const getPhrases = async (): Promise<PhraseResponse[]> => {
   return data as PhraseResponse[]
 }
 
-const addPhrase = async (objet: Phrase): Promise<null> => {
-  const { data, error } = await supabase.from('Phrases').insert([objet])
+const addPhrase = async (objet: Phrase): Promise<number> => {
+  const { error, status } = await supabase.from('Phrases').insert([objet])
   if (error) throw new Error(error.message)
 
-  console.log({
-    data: data,
-    error: error,
-  })
-
-  return data
+  return status
 }
 
 const removePhrase = async (id: number): Promise<number> => {
-  const { error } = await supabase.from('Phrases').delete().eq('id', id)
+  const { status, error } = await supabase.from('Phrases').delete().eq('id', id)
   if (error) throw new Error(error.message)
 
-  return id
+  return status
 }
 
-const updatePhrase = async (id: number, phrase: string): Promise<number> => {
-  const { error } = await supabase
+const updatePhrase = async (id: number, objet: Phrase): Promise<number> => {
+  const { status, error } = await supabase
     .from('Phrases')
-    .update({ phrase: phrase })
+    .update(objet)
     .eq('id', id)
   if (error) throw new Error(error.message)
 
-  return id
+  return status
 }
 
 export { getPhrases, addPhrase, removePhrase, updatePhrase }

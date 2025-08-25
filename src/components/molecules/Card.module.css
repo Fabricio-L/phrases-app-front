@@ -1,5 +1,5 @@
 .card {
-  display:inline-block;
+  display: inline-block;
   background-color: var(--color-bg-secondary);
   border-top: solid var(--border-width) var(--color-border);
   border-radius: var(--border-radius);
@@ -13,7 +13,7 @@
 .phrase {
   font-size: var(--font-size-sm);
   font-style: italic;
-  font-weight: 300;
+  font-weight: 400;
 }
 
 .author {
@@ -21,4 +21,19 @@
   font-size: var(--font-size-md);
   font-weight: 600;
   text-align: end;
+}
+
+.icons {
+  display: flex;
+  justify-content: flex-end;
+  cursor: pointer;
+  gap: 0.5rem;
+}
+
+.trash {
+  color: var(--color-error);
+}
+
+.edit {
+  color: var(--color-info);
 }

@@ -1,5 +1,5 @@
 import { NavBar, Modal, Showcase } from './components/molecules'
-import { Button } from './components/atoms'
+import { Button, Spinner } from './components/atoms'
 import { IconPlus } from '@tabler/icons-react'
 
 import useModalManager from './hooks/useModalManager'
@@ -24,7 +24,7 @@ function App() {
     dispatch(fetchAll())
 
     if (items.error) addToast(items.error, 'error')
-  }, [dispatch, items.error, addToast])
+  }, [dispatch, items.error, addToast, isOpen])
 
   return (
     <>
@@ -38,14 +38,14 @@ function App() {
             icon={<IconPlus />}
           />
         </div>
-        <Showcase data={items.list} />
+        {items.loading ? <Spinner /> : <Showcase data={items.list} />}
       </main>
       <Modal
         title="Nueva Frase"
         isOpen={isOpen('modal')}
         onClose={() => close('modal')}
       >
-        <PhrasesForm />
+        <PhrasesForm onClose={() => close('modal')} edit={false} />
       </Modal>
     </>
   )
