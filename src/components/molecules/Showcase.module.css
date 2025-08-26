@@ -4,3 +4,11 @@
   column-gap: 2rem;
   padding: 2rem;
 }
+
+.empty {
+  display: block;
+  column-span: all;
+  color: var(--color-text);
+  text-align: center;
+  width: 100%;
+}

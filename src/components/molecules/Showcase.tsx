@@ -19,7 +19,9 @@ const Showcase = (props: ShowcaseProps) => {
         filtered.map((phrase) => <Card key={phrase.id} phrase={phrase} />)
       ) : (
         <div>
-          <h2 key={0}>Aún no hay ninguna frase cargada</h2>
+          <h2 key={0} className={styles.empty}>
+            Aún no hay ninguna frase cargada
+          </h2>
         </div>
       )}
     </section>
