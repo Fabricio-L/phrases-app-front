@@ -1,0 +1,11 @@
+.search {
+  display: block;
+  column-span: all;
+  padding: var(--padding-size);
+  background: var(--color-bg-secondary);
+  color: var(--color-text);
+  border: solid var(--border-width) var(--color-border);
+  border-radius: var(--border-radius);
+  width: 100%;
+  margin-bottom: 2rem;
+}
