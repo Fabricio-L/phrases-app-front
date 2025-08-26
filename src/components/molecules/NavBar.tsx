@@ -10,7 +10,7 @@ const NavBar = () => {
   return (
     <header className={styles.header}>
       <nav className={styles.nav}>
-        <h1 className={styles.title}>Frases Wep App</h1>
+        <h1 className={styles.title}>Frases Web App</h1>
         <IconButton ariaLabel="Hyperlink to Github" onClick={handleHyperlink}>
           <IconBrandGithub />
         </IconButton>

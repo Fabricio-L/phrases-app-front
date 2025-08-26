@@ -26,14 +26,15 @@
 .icons {
   display: flex;
   justify-content: flex-end;
-  cursor: pointer;
   gap: 0.5rem;
 }
 
 .trash {
+  cursor: pointer;
   color: var(--color-error);
 }
 
 .edit {
+  cursor: pointer;
   color: var(--color-info);
 }
